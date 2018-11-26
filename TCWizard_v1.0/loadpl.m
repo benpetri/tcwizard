@@ -36,7 +36,7 @@ function [lines,points,excess,phaselist,param,ignore,data,cb,iminfo]=loadpl(im,d
 % You should have received a copy of the GNU General Public License
 % along with TCWizard.  If not, see <http://www.gnu.org/licenses/>.
 %
-% TCWizard is Copyright (C) 2013 by Benoît Petri and Etienne Skrzypek
+% TCWizard is Copyright (C) 2013 by BenoÃ®t Petri and Etienne Skrzypek
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%% Store TC package path
@@ -54,13 +54,13 @@ load(ldname);
 [si1,si2]=size(iminfo);
 if si1~=0
     [Nameimage,Pathimage]=uigetfile('*.*','Image file ?');
-
+    iminfo.path=[Pathimage Nameimage];
 end
 
 %%% Reassign paths
 param.pathin=Pathin;
 param.matpath=matpath;
-iminfo.path=[Pathimage Nameimage];
+
 % Go back to matlab path
 cd(param.matpath);
 
